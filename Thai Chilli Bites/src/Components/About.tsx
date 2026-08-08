@@ -3,6 +3,8 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import aboutImage from "../assets/About.png";
 
+import "../styles/About.css";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
@@ -14,7 +16,7 @@ export default function About() {
     const ctx = gsap.context(() => {
       gsap.from(imageRef.current, {
         opacity: 0,
-        x: -100,
+        x: -80,
         duration: 1,
         ease: "power3.out",
         scrollTrigger: {
@@ -26,7 +28,7 @@ export default function About() {
 
       gsap.from(contentRef.current, {
         opacity: 0,
-        x: 100,
+        x: 80,
         duration: 1,
         delay: 0.15,
         ease: "power3.out",
@@ -42,21 +44,26 @@ export default function About() {
   }, []);
 
   return (
-    <section className="about-section" ref={sectionRef}>
+    <section className="about-section" id="about" ref={sectionRef}>
       <div className="about-container">
+
         <div className="about-image-wrapper">
           <img
             ref={imageRef}
             src={aboutImage}
-            alt="Thai Chilli Bites"
+            alt="Thai Chilli Bites food"
             className="about-image"
           />
         </div>
 
         <div className="about-copy" ref={contentRef}>
-          <span className="eyebrow">ABOUT US</span>
+          <span className="eyebrow">
+            ABOUT US
+          </span>
 
-          <h2>Thai Chilli Bites</h2>
+          <h2>
+            Thai Chilli Bites
+          </h2>
 
           <p>
             At our restaurant, every dish is crafted with passion using
@@ -76,6 +83,7 @@ export default function About() {
             and enjoy great moments together.
           </p>
         </div>
+
       </div>
     </section>
   );

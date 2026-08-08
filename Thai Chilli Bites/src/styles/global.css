@@ -1178,10 +1178,24 @@ button {
   }
 
   .about-section {
-    padding-top: 45px;
+  width: 100%;
+  min-height: 100vh;
+  padding: 120px 7%;
+  background: #000;
+  color: #fff;
+  overflow: hidden;
+}
+.about-container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 
-    padding-bottom: 50px;
-  }
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 80px;
+}
+
 
   .about-grid {
     grid-template-columns: 1fr;
@@ -1189,24 +1203,62 @@ button {
     gap: 25px;
   }
 
-  .about-photo-wrap img {
-    width: 100%;
+.about-image-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: 500px;
 
-    aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
 
-    height: auto;
-  }
+  border-radius: 4px;
 
-  .about-copy h2,
-  .section-heading h2 {
-    font-size: 28px;
-  }
+  opacity: 1;
+}
 
-  .about-copy p {
-    font-size: 14px;
 
-    line-height: 1.75;
-  }
+.about-copy {
+  width: 100%;
+  max-width: 650px;
+}
+
+.eyebrow {
+  display: inline-block;
+
+  margin-bottom: 18px;
+
+  color: #ffd400;
+
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.about-copy h2 {
+  margin: 0 0 25px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(42px, 5vw, 72px);
+  line-height: 1.05;
+
+  color: #fff;
+}
+.about-copy p {
+  margin: 0 0 22px;
+
+  color: #e5e5e5;
+
+  font-size: 17px;
+  line-height: 1.8;
+}
+
 
 
   .menu-section {
@@ -1810,4 +1862,42 @@ button {
   transform: none;
 
   box-shadow: none;
+}
+
+@media (max-width: 900px) {
+  .about-section {
+    padding: 100px 6%;
+  }
+
+  .about-container {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .about-image {
+    max-width: 100%;
+    height: 450px;
+  }
+
+  .about-copy {
+    max-width: 100%;
+  }
+}
+@media (max-width: 600px) {
+  .about-section {
+    padding: 80px 20px;
+  }
+
+  .about-image {
+    height: 350px;
+  }
+
+  .about-copy h2 {
+    font-size: 42px;
+  }
+
+  .about-copy p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
 }
