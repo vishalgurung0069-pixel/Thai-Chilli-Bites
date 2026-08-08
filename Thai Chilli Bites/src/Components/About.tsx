@@ -1,14 +1,14 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import aboutImage from "../assets/about.png";
+import aboutImage from "../assets/About.png";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function About() {
-  const sectionRef = useRef<HTMLElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
-  const contentRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const imageRef = useRef<HTMLImageElement | null>(null);
+  const contentRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -42,24 +42,19 @@ export default function About() {
   }, []);
 
   return (
-    <section
-      id="about"
-      className="section about-section"
-      ref={sectionRef}
-    >
-      <div className="about-grid">
-        <div className="about-photo-wrap">
+    <section className="about-section" ref={sectionRef}>
+      <div className="about-container">
+        <div className="about-image-wrapper">
           <img
             ref={imageRef}
             src={aboutImage}
-            alt="Selection of Thai dishes"
+            alt="Thai Chilli Bites"
+            className="about-image"
           />
         </div>
 
         <div className="about-copy" ref={contentRef}>
-          <span className="eyebrow">
-            ABOUT US
-          </span>
+          <span className="eyebrow">ABOUT US</span>
 
           <h2>Thai Chilli Bites</h2>
 
