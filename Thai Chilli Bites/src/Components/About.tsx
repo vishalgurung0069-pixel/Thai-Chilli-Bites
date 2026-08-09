@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import aboutImage from "../assets/About.png";
 
-import "../styles/About.css";
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,6 +47,7 @@ export default function About() {
     <section className="about-section" id="about" ref={sectionRef}>
       <div className="about-container">
 
+        {/* LEFT - IMAGE */}
         <div className="about-image-wrapper">
           <img
             ref={imageRef}
@@ -56,6 +57,7 @@ export default function About() {
           />
         </div>
 
+        {/* RIGHT - CONTENT */}
         <div className="about-copy" ref={contentRef}>
           <span className="eyebrow">
             ABOUT US

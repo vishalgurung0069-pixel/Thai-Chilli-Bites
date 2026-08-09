@@ -1,4 +1,13 @@
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap");
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
 
 :root {
   --black: #000000;
@@ -14,9 +23,10 @@
   --content-width: 1100px;
 }
 
-/* =========================================
+
+/* =========================================================
    RESET
-========================================= */
+========================================================= */
 
 * {
   margin: 0;
@@ -33,9 +43,12 @@ body {
   min-width: 320px;
   margin: 0;
   padding: 0;
+
   background: var(--black);
   color: var(--white);
+
   font-family: var(--sans);
+
   overflow-x: hidden;
 }
 
@@ -61,13 +74,16 @@ button {
 .site {
   width: 100%;
   min-height: 100vh;
+
   background: var(--black);
+
   overflow-x: hidden;
 }
 
-/* =========================================
+
+/* =========================================================
    NAVBAR
-========================================= */
+========================================================= */
 
 .navbar {
   position: fixed !important;
@@ -89,22 +105,26 @@ button {
 
   border-bottom: 1px solid rgba(255, 212, 0, 0.25) !important;
 
-  backdrop-filter: blur(15px) !important;
-  -webkit-backdrop-filter: blur(15px) !important;
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
 }
 
 .brand {
   display: flex !important;
   align-items: center !important;
+
   flex-shrink: 0;
+
   position: relative !important;
   z-index: 1000000 !important;
 }
 
 .brand img {
   display: block !important;
+
   width: 65px !important;
   height: 70px !important;
+
   object-fit: contain !important;
 
   transition:
@@ -114,7 +134,10 @@ button {
 
 .brand:hover img {
   transform: scale(1.08);
-  filter: drop-shadow(0 0 12px rgba(255, 212, 0, 0.5));
+
+  filter: drop-shadow(
+    0 0 12px rgba(255, 212, 0, 0.5)
+  );
 }
 
 .nav-links {
@@ -133,6 +156,7 @@ button {
 
 .nav-links a {
   display: inline-block !important;
+
   position: relative !important;
 
   color: #ffffff !important;
@@ -183,6 +207,7 @@ button {
 
   padding: 11px 20px !important;
 
+  border: none;
   border-radius: 5px;
 
   background: var(--yellow) !important;
@@ -204,7 +229,8 @@ button {
 .order-btn:hover {
   transform: translateY(-2px);
 
-  box-shadow: 0 8px 25px rgba(255, 212, 0, 0.35);
+  box-shadow:
+    0 8px 25px rgba(255, 212, 0, 0.35);
 }
 
 .mobile-toggle {
@@ -224,9 +250,10 @@ button {
   z-index: 1000000;
 }
 
-/* =========================================
+
+/* =========================================================
    HERO
-========================================= */
+========================================================= */
 
 .hero {
   position: relative !important;
@@ -360,83 +387,128 @@ button {
 
   background: #ffe000;
 
-  box-shadow: 0 12px 30px rgba(255, 212, 0, 0.3);
+  box-shadow:
+    0 12px 30px rgba(255, 212, 0, 0.3);
 }
 
-/* =========================================
+
+/* =========================================================
    GENERAL SECTION
-========================================= */
+========================================================= */
 
 .section {
-  width: min(calc(100% - 80px), var(--content-width));
+  width: min(
+    calc(100% - 80px),
+    var(--content-width)
+  );
 
   margin-left: auto;
   margin-right: auto;
 }
 
-/* =========================================
-   ABOUT
-========================================= */
+
+/* =========================================================
+   ABOUT SECTION
+   IMAGE LEFT + CONTENT RIGHT
+========================================================= */
 
 .about-section {
-  padding-top: 65px;
-  padding-bottom: 65px;
-}
-
-.about-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1.7fr;
-
-  gap: clamp(30px, 4vw, 55px);
-
-  align-items: center;
-}
-
-.about-photo-wrap {
   width: 100%;
+
+  min-height: 100vh;
+
+  padding: 100px 5%;
+
+  background: var(--black);
+
+  color: var(--white);
 
   overflow: hidden;
-
-  border: 1px solid var(--border);
 }
 
-.about-photo-wrap img {
+.about-container {
   width: 100%;
 
-  aspect-ratio: 1 / 1;
+  max-width: 1400px;
 
-  object-fit: cover;
+  margin: 0 auto;
 
-  transition: transform 0.6s ease;
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 70px;
 }
 
-.about-photo-wrap:hover img {
-  transform: scale(1.04);
+
+/* =========================================================
+   ABOUT IMAGE
+========================================================= */
+
+.about-image-wrapper {
+  width: 52%;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
 }
+
+.about-image {
+  display: block;
+
+  width: 100%;
+
+  max-width: 700px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  border-radius: 4px;
+
+  transition:
+    transform 0.6s ease;
+}
+
+.about-image-wrapper:hover .about-image {
+  transform: scale(1.02);
+}
+
+
+/* =========================================================
+   ABOUT CONTENT
+========================================================= */
 
 .about-copy {
-  width: 100%;
+  width: 48%;
 
   max-width: 650px;
 
+  padding-left: 28px;
+
   border-left: 3px solid var(--yellow);
 
-  padding-left: clamp(15px, 2vw, 25px);
+  flex-shrink: 0;
 }
 
 .eyebrow {
   display: block;
 
-  margin-bottom: 9px;
+  margin-bottom: 14px;
 
   color: var(--yellow);
 
   font-family: var(--sans);
 
-  font-size: 12px;
+  font-size: 13px;
 
-  font-weight: 600;
+  font-weight: 700;
 
   letter-spacing: 0.08em;
 
@@ -444,34 +516,50 @@ button {
 }
 
 .about-copy h2 {
-  margin: 0 0 0;
+  margin: 0 0 22px;
+
+  color: var(--white);
 
   font-family: var(--serif);
 
-  font-size: clamp(28px, 3vw, 36px);
+  font-size: clamp(38px, 4vw, 58px);
 
   font-weight: 500;
 
-  line-height: 1.2;
+  line-height: 1.1;
 }
 
 .about-copy p {
-  margin-top: 16px;
+  margin: 0 0 22px;
 
   color: #ededed;
 
   font-family: var(--sans);
 
-  font-size: 14px;
+  font-size: 15px;
 
   font-weight: 400;
 
   line-height: 1.8;
 }
 
-/* =========================================
-   SECTION HEADINGS
-========================================= */
+
+/* =========================================================
+   MENU
+========================================================= */
+
+.menu-section {
+  width: min(
+    calc(100% - 80px),
+    var(--content-width)
+  );
+
+  margin-left: auto;
+  margin-right: auto;
+
+  padding-top: 0;
+  padding-bottom: 60px;
+}
 
 .section-heading {
   display: block;
@@ -497,24 +585,11 @@ button {
   line-height: 1.2;
 }
 
-/* =========================================
-   MENU
-========================================= */
-
-.menu-section {
-  width: min(calc(100% - 80px), var(--content-width));
-
-  margin-left: auto;
-  margin-right: auto;
-
-  padding-top: 0;
-  padding-bottom: 60px;
-}
-
 .dish-grid {
   display: grid;
 
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
   gap: 30px;
 
@@ -640,7 +715,8 @@ button {
 
   letter-spacing: 0.04em;
 
-  transition: letter-spacing 0.3s ease;
+  transition:
+    letter-spacing 0.3s ease;
 }
 
 .dish-card:hover .dish-body a {
@@ -654,19 +730,24 @@ button {
 
   font-size: 16px;
 
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease;
 }
 
 .dish-card:hover .dish-body a span {
   transform: translateX(5px);
 }
 
-/* =========================================
+
+/* =========================================================
    CONTACT
-========================================= */
+========================================================= */
 
 .contact-section {
-  width: min(calc(100% - 80px), var(--content-width));
+  width: min(
+    calc(100% - 80px),
+    var(--content-width)
+  );
 
   margin-left: auto;
   margin-right: auto;
@@ -759,19 +840,24 @@ button {
 
   object-position: center;
 
-  transition: transform 0.5s ease;
+  transition:
+    transform 0.5s ease;
 }
 
 .map-wrap:hover img {
   transform: scale(1.03);
 }
 
-/* =========================================
+
+/* =========================================================
    FOOTER
-========================================= */
+========================================================= */
 
 .footer {
-  width: min(calc(100% - 80px), var(--content-width));
+  width: min(
+    calc(100% - 80px),
+    var(--content-width)
+  );
 
   margin-left: auto;
   margin-right: auto;
@@ -828,7 +914,8 @@ button {
 
   font-size: 12px;
 
-  transition: transform 0.3s ease;
+  transition:
+    transform 0.3s ease;
 }
 
 .phone-pill:hover {
@@ -923,9 +1010,10 @@ button {
   line-height: 1.6;
 }
 
-/* =========================================
+
+/* =========================================================
    ORDER CLOSED OVERLAY
-========================================= */
+========================================================= */
 
 .order-overlay {
   position: fixed;
@@ -944,7 +1032,6 @@ button {
   background: rgba(0, 0, 0, 0.78);
 
   backdrop-filter: blur(8px);
-
   -webkit-backdrop-filter: blur(8px);
 }
 
@@ -965,7 +1052,8 @@ button {
 
   border-radius: 8px;
 
-  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.8);
+  box-shadow:
+    0 25px 70px rgba(0, 0, 0, 0.8);
 
   animation: orderPopup 0.3s ease-out;
 }
@@ -973,12 +1061,18 @@ button {
 @keyframes orderPopup {
   from {
     opacity: 0;
-    transform: scale(0.9) translateY(15px);
+
+    transform:
+      scale(0.9)
+      translateY(15px);
   }
 
   to {
     opacity: 1;
-    transform: scale(1) translateY(0);
+
+    transform:
+      scale(1)
+      translateY(0);
   }
 }
 
@@ -1071,7 +1165,8 @@ button {
 .order-ok:hover {
   transform: translateY(-2px);
 
-  box-shadow: 0 8px 25px rgba(255, 212, 0, 0.25);
+  box-shadow:
+    0 8px 25px rgba(255, 212, 0, 0.25);
 }
 
 .order-btn:disabled {
@@ -1084,11 +1179,15 @@ button {
   box-shadow: none;
 }
 
-/* =========================================
+
+/* =========================================================
    TABLET
-========================================= */
+========================================================= */
 
 @media (max-width: 900px) {
+
+  /* ---------- NAVBAR ---------- */
+
   .navbar {
     padding: 0 30px !important;
   }
@@ -1096,6 +1195,9 @@ button {
   .nav-links {
     gap: 20px !important;
   }
+
+
+  /* ---------- HERO ---------- */
 
   .hero {
     min-height: 650px;
@@ -1121,16 +1223,47 @@ button {
     max-width: 480px;
   }
 
+
+  /* ---------- GENERAL ---------- */
+
   .section,
   .footer {
     width: calc(100% - 60px);
   }
 
-  .about-grid {
-    grid-template-columns: 1fr 1.6fr;
 
-    gap: 30px;
+  /* ---------- ABOUT ---------- */
+
+  .about-section {
+    padding: 90px 5%;
   }
+
+  .about-container {
+    gap: 40px;
+  }
+
+  .about-image-wrapper {
+    width: 50%;
+  }
+
+  .about-copy {
+    width: 50%;
+
+    padding-left: 20px;
+  }
+
+  .about-copy h2 {
+    font-size: 42px;
+  }
+
+  .about-copy p {
+    font-size: 14px;
+
+    line-height: 1.7;
+  }
+
+
+  /* ---------- MENU ---------- */
 
   .dish-grid {
     gap: 16px;
@@ -1139,31 +1272,37 @@ button {
   .dish-image {
     height: 190px;
   }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 768px) {
 
   .about-section {
-    padding: 100px 6%;
+    padding: 80px 25px;
   }
 
   .about-container {
-    grid-template-columns: 1fr;
-    gap: 50px;
+    gap: 35px;
   }
 
-  .about-image {
-    max-width: 100%;
-    height: 450px;
-  }
-
-  .about-copy {
-    max-width: 100%;
+  .about-copy h2 {
+    font-size: 38px;
   }
 }
 
-/* =========================================
+
+/* =========================================================
    MOBILE
-========================================= */
+========================================================= */
 
 @media (max-width: 620px) {
+
+  /* ---------- NAVBAR ---------- */
+
   .navbar {
     position: fixed !important;
 
@@ -1233,6 +1372,9 @@ button {
     color: #ffffff !important;
   }
 
+
+  /* ---------- HERO ---------- */
+
   .hero {
     width: 100% !important;
 
@@ -1293,6 +1435,9 @@ button {
     font-size: 12px;
   }
 
+
+  /* ---------- GENERAL ---------- */
+
   .section,
   .footer {
     width: calc(100% - 36px);
@@ -1301,6 +1446,11 @@ button {
     margin-right: auto;
   }
 
+
+  /* =====================================================
+     ABOUT - MOBILE
+  ===================================================== */
+
   .about-section {
     width: 100%;
 
@@ -1308,17 +1458,11 @@ button {
 
     padding: 80px 20px;
 
-    background: #000;
+    background: var(--black);
 
     color: #fff;
 
     overflow: hidden;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
   }
 
   .about-container {
@@ -1328,14 +1472,17 @@ button {
 
     margin: 0 auto;
 
-    display: grid;
+    display: flex;
 
-    grid-template-columns: 1fr;
+    flex-direction: column;
 
-    align-items: center;
+    align-items: stretch;
 
     gap: 50px;
   }
+
+
+  /* ---------- ABOUT IMAGE ---------- */
 
   .about-image-wrapper {
     width: 100%;
@@ -1354,14 +1501,17 @@ button {
 
     max-width: 600px;
 
-    height: 350px;
+    height: auto;
 
-    object-fit: cover;
+    object-fit: contain;
 
     object-position: center;
 
     border-radius: 4px;
   }
+
+
+  /* ---------- ABOUT CONTENT ---------- */
 
   .about-copy {
     width: 100%;
@@ -1390,7 +1540,7 @@ button {
   .about-copy h2 {
     margin: 0 0 25px;
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: var(--serif);
 
     font-size: 42px;
 
@@ -1408,6 +1558,9 @@ button {
 
     line-height: 1.7;
   }
+
+
+  /* ---------- MENU ---------- */
 
   .menu-section {
     padding-top: 0;
@@ -1441,6 +1594,9 @@ button {
     font-size: 13px;
   }
 
+
+  /* ---------- CONTACT ---------- */
+
   .contact-section {
     padding-top: 15px;
 
@@ -1459,6 +1615,9 @@ button {
     height: 260px;
   }
 
+
+  /* ---------- FOOTER ---------- */
+
   .quote h2 {
     font-size: 25px;
   }
@@ -1469,16 +1628,55 @@ button {
     flex-wrap: wrap;
   }
 
+
+  /* ---------- ORDER POPUP ---------- */
+
   .order-message {
     padding: 38px 25px 30px;
   }
 }
 
-/* =========================================
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 420px) {
+
+  .about-section {
+    padding: 65px 16px;
+  }
+
+  .about-container {
+    gap: 40px;
+  }
+
+  .about-copy {
+    padding-left: 15px;
+  }
+
+  .eyebrow {
+    font-size: 12px;
+  }
+
+  .about-copy h2 {
+    font-size: 34px;
+  }
+
+  .about-copy p {
+    font-size: 13px;
+
+    line-height: 1.7;
+  }
+}
+
+
+/* =========================================================
    REDUCED MOTION
-========================================= */
+========================================================= */
 
 @media (prefers-reduced-motion: reduce) {
+
   html {
     scroll-behavior: auto;
   }
@@ -1487,6 +1685,7 @@ button {
   *::before,
   *::after {
     transition: none !important;
+
     animation: none !important;
   }
 }
