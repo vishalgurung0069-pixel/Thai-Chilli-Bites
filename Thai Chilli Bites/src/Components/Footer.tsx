@@ -92,7 +92,6 @@ export default function Footer() {
         <span>©</span>
         2026 Thai Chilli Bites.
         All Rights Reserved&nbsp; | &nbsp;
-        Designed by Preeti Gurung
       </div>
     </footer>
   );
