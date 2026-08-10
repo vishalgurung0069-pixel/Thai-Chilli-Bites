@@ -1573,7 +1573,10 @@ button {
   .menu-section {
     padding-top: 0;
 
-    padding-bottom: 45px;
+
+
+    padding-bottom:0px;
+    margin-bottom:55px ;
   }
 
   .section-heading {
