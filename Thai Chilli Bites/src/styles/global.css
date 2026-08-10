@@ -1624,10 +1624,10 @@ button {
   /* ---------- CONTACT ---------- */
 
   .contact-section {
-    margin-top: 0px;
+    margin-top: 15px;
     padding-top: 15px;
 
-    padding-bottom: 55px;
+    padding-bottom: 70px;
   }
 
     .contact-heading {
