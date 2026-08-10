@@ -828,7 +828,12 @@ button {
   border: 1px solid var(--border);
 
   margin: 0;
+
+    display: block;
+
+  cursor: pointer;
 }
+
 
 .map-wrap img {
   display: block;
@@ -839,6 +844,8 @@ button {
   object-fit: cover;
 
   object-position: center;
+  cursor : pointer;
+  
 
   transition:
     transform 0.5s ease;

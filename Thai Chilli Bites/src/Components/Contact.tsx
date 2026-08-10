@@ -132,15 +132,22 @@ export default function Contact() {
           </div>
         </div>
 
-        <div
-          className="map-wrap"
-          ref={mapRef}
-        >
-          <img
-            src={mapImage}
-            alt="Map showing Thai Chilli Bites in Northmead"
-          />
-        </div>
+      <div
+  className="map-wrap"
+  ref={mapRef}
+>
+  <a
+    href="https://www.google.com/maps/search/?api=1&query=Shop+G3%2C+2-6+Campbell+St%2C+Northmead+NSW+2152"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open Thai Chilli Bites location in Google Maps"
+  >
+    <img
+      src={mapImage}
+      alt="Map showing Thai Chilli Bites in Northmead"
+    />
+  </a>
+</div>
       </div>
     </section>
   );
