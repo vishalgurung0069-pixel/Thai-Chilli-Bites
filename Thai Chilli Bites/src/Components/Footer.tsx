@@ -91,7 +91,7 @@ export default function Footer() {
       <div className="copyright footer-animation">
         <span>©</span>
         2026 Thai Chilli Bites.
-        All Rights Reserved&nbsp; | &nbsp;
+        All Rights Reserved&nbsp; 
       </div>
     </footer>
   );
